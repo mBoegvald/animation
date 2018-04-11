@@ -93,9 +93,9 @@ body {
 
 .shooter_shotcycle {
     animation-name: shooter_shotcycle_kf;
-    animation-duration: 1.3s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
-    animation-timing-function: steps(10);
+    animation-timing-function: steps(9);
     animation-fill-mode: forwards;
 
 }
@@ -104,7 +104,7 @@ body {
 
 .shooter_sad {
     animation-name: shooter_sad_kf;
-    animation-duration: 1;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -120,9 +120,17 @@ body {
 
 /*Rykker shooters container mod højre. */
 
-.shooter_move_right {
-    animation-name: shooter_move_right_kf;
+.shooter_walk_right {
+    animation-name: shooter_walk_right_kf;
     animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.shooter_run_right {
+    animation-name: shooter_run_right_kf;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
@@ -144,7 +152,7 @@ body {
         background-position: 0 -100%;
     }
     100% {
-        background-position: -1000% -100%;
+        background-position: -900% -100%;
 
     }
 }
@@ -194,13 +202,24 @@ body {
     }
 }
 
-@keyframes shooter_move_right_kf {
+@keyframes shooter_walk_right_kf {
     0% {
         left: -30vw;
         bottom: 1vw;
     }
     100% {
         left: 15vw;
+        bottom: 1vw;
+    }
+}
+
+@keyframes shooter_run_right_kf {
+    0% {
+        left: 15vw;
+        bottom: 1vw;
+    }
+    100% {
+        left: 35vw;
         bottom: 1vw;
     }
 }
@@ -227,9 +246,10 @@ body {
 .keeper_catchcycle {
     animation-name: keeper_catchcycle_kf;
     animation-duration: 1s;
-    animation-timing-function: steps(6);
+    animation-timing-function: steps(5);
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
+    animation-delay: 1s;
 }
 
 .keeper_position {
@@ -245,7 +265,7 @@ body {
         background-position: 0 0;
     }
     100% {
-        background-position: -600% 0;
+        background-position: -500% 0;
 
     }
 
@@ -266,20 +286,25 @@ body {
 
 /*      FOOTBALL CSS START   */
 
-#football {
+#football_container {
+    position: absolute;
     width: 5vw;
     height: 7.14vw;
     background-image: url(football-01.svg);
     background-size: 100%;
-    position: absolute;
-    animation-name: football_animation_kf;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
+
 }
 
-@keyframes football_animation_kf {
+.football_middle {
+    animation-name: football_middle_kf;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+}
+
+@keyframes football_middle_kf {
     0% {
         transform: scale(1.3);
         left: 47.4vw;
@@ -292,8 +317,6 @@ body {
         left: 47.4vw;
         bottom: 20vw;
     }
-
-
 }
 
 
