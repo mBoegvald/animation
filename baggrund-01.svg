@@ -1,0 +1,11 @@
+<svg id="Baggrund" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 768">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #263e4c;
+      }
+    </style>
+  </defs>
+  <title>baggrund</title>
+  <rect class="cls-1" x="1" width="1365" height="768"/>
+</svg>

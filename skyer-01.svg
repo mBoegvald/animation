@@ -1,0 +1,18 @@
+<svg id="Layer_4" data-name="Layer 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 768">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6e7e8;
+      }
+    </style>
+  </defs>
+  <title>skyer</title>
+  <ellipse class="cls-1" cx="204" cy="86" rx="124" ry="34"/>
+  <ellipse class="cls-1" cx="66" cy="119.5" rx="87" ry="25.5"/>
+  <ellipse class="cls-1" cx="441" cy="13" rx="75" ry="23"/>
+  <ellipse class="cls-1" cx="478" cy="34" rx="63" ry="21"/>
+  <ellipse class="cls-1" cx="647.5" cy="118.5" rx="111.5" ry="19.5"/>
+  <ellipse class="cls-1" cx="699.5" cy="142" rx="35.5" ry="17"/>
+  <ellipse class="cls-1" cx="1082" cy="82" rx="124" ry="34"/>
+  <ellipse class="cls-1" cx="944" cy="115.5" rx="87" ry="25.5"/>
+</svg>
