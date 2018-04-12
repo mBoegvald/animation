@@ -70,6 +70,9 @@ body {
 
 #shooter_container {
     position: absolute;
+    left: -30vw;
+    bottom: 1vw;
+
 }
 
 #shooter_sprite {
@@ -84,7 +87,7 @@ body {
 .shooter_walkcycle {
     animation-name: shooter_walkcycle_kf;
     animation-duration: 1s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 3;
     animation-timing-function: steps(8);
 
 }
@@ -249,10 +252,11 @@ body {
     animation-timing-function: steps(5);
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
-    animation-delay: 1s;
 }
 
 .keeper_position {
+    left: 39.6vw;
+    bottom: 14vw;
     animation-name: keeper_position_kf;
     animation-duration: 3s;
     animation-iteration-count: 1;
@@ -271,16 +275,6 @@ body {
 
 }
 
-@keyframes keeper_position_kf {
-    0% {
-        left: 39.6vw;
-        bottom: 14vw;
-    }
-    100% {
-        left: 39.6vw;
-        bottom: 14vw;
-    }
-}
 
 /*      KEEPER CSS SLUT      */
 
@@ -301,14 +295,19 @@ body {
     animation-iteration-count: 1;
     animation-fill-mode: both;
     animation-timing-function: linear;
-    animation-delay: 1s;
+}
+
+.football_position {
+    transform: scale(1.3);
+    left: 47.4vw;
+    bottom: 5.8vw;
 }
 
 @keyframes football_middle_kf {
     0% {
         transform: scale(1.3);
         left: 47.4vw;
-        bottom: 5.5vw;
+        bottom: 5.8vw;
 
     }
 
