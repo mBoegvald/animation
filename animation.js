@@ -109,6 +109,8 @@ $("#button_shooterTrist").on("click", shooterTrist);
 
 function shooterTrist() {
     console.log("shooterTrist");
+    $("#shooter_sprite").removeClass("shooter_shotcycle");
+
 
     $("#shooter_sprite").addClass("shooter_sad");
 }
