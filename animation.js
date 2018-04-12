@@ -59,6 +59,8 @@ function dommerFloejt() {
     console.log("dommerFloejt");
 
     $("#shooter_sprite").removeClass("shooter_walkcycle");
+
+
     //start lyd: dommerfløjt
 
 }
@@ -68,6 +70,8 @@ $("#button_shotcycleStart").on("click", shotcycleStart);
 
 function shotcycleStart() {
     console.log("shotcycleStart");
+
+    $("#shooter_container").removeClass("shooter_walk_right");
 
     $("#shooter_sprite").addClass("shooter_shotcycle");
 
