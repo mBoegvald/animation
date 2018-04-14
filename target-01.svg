@@ -1,0 +1,21 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #600000;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>target</title>
+  <circle class="cls-1" cx="176.29" cy="176.5" r="164.5"/>
+  <circle class="cls-2" cx="176.29" cy="176.5" r="127.5"/>
+  <circle class="cls-1" cx="176.29" cy="176.5" r="95.5"/>
+  <circle class="cls-2" cx="176.29" cy="176.5" r="67"/>
+  <circle class="cls-1" cx="176.29" cy="176.5" r="45"/>
+  <circle class="cls-2" cx="176.29" cy="176.5" r="23.5"/>
+  <circle class="cls-1" cx="176.29" cy="176.5" r="11"/>
+</svg>

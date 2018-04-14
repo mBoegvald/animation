@@ -71,17 +71,43 @@ function startHistorie() {
 
     $("#shooter_container").addClass("shooter_walk_right");
 
-    $("#shooter_container").on("animationend", activateKeeperButton);
+    $("#shooter_container").on("animationend", targetButton);
 
 
 }
 
-function activateKeeperButton() {
+function targetButton() {
+
     $("#shooter_container").off("animationend");
-    $("#keeper_container").on("click", dommerFloejt);
+
+
+
+
+    $("#target_container1").on("click", dommerFloejt);
 
     $("#shooter_sprite").removeClass("shooter_walkcycle");
-}
+
+    $("#target_container1").addClass("target_middle");
+
+    $("#target_container2").addClass("target_left");
+
+    $("#target_container3").addClass("target_right");
+
+    $("#target_container2, #target_container3").hover(function () {
+        $("#target_container2, #target_container3").css("transform", "scale(1.2)");
+    }, function () {
+        $("#target_container2, #target_container3").css("transform", "scale(1)");
+    });
+
+
+    $("#target_container1").hover(function () {
+        $("#target_container1").css("transform", "scale(1.2)");
+    }, function () {
+        $("#target_container1").css("transform", "scale(1)");
+    });
+};
+
+
 
 
 function dommerFloejt() {
@@ -89,7 +115,13 @@ function dommerFloejt() {
 
     console.log("dommerFloejt");
 
-    $("#keeper_container").off("click", dommerFloejt);
+    $("#target_container1").removeClass("target_middle");
+
+    $("#target_container2").removeClass("target_left");
+
+    $("#target_container3").removeClass("target_right");
+
+    $("#target_container1").off("click", dommerFloejt);
 
 
 

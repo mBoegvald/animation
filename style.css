@@ -363,3 +363,39 @@ body {
 
 
 /*      FOOTBALL CSS SLUT   */
+
+/*      TARGET CSS START    */
+
+#target_container1,
+#target_container2,
+#target_container3 {
+    background-image: url(target-01.svg);
+    position: absolute;
+
+
+}
+
+.target_middle {
+    width: 10vw;
+    height: 10vw;
+    bottom: 22vw;
+    left: 45vw;
+}
+
+.target_left {
+    width: 7vw;
+    height: 7vw;
+    bottom: 28vw;
+    left: 29vw;
+}
+
+.target_right {
+    width: 7vw;
+    height: 7vw;
+    bottom: 28vw;
+    left: 63.8vw;
+}
+
+
+
+/*      TARGET CSS SLUT    */
