@@ -275,6 +275,7 @@ body {
 #keeper_container {
     position: absolute;
 
+
 }
 
 #keeper_sprite {
@@ -297,7 +298,8 @@ body {
 
 .keeper_position {
     left: 39.6vw;
-    bottom: 14vw;
+    bottom: 17vw;
+    transform: scale(1.4);
     animation-name: keeper_position_kf;
     animation-duration: 3s;
     animation-iteration-count: 1;
@@ -346,16 +348,16 @@ body {
 
 @keyframes football_middle_kf {
     0% {
-        transform: scale(1.3);
+        transform: scale(1.35);
         left: 47.4vw;
         bottom: 5.8vw;
 
     }
 
     100% {
-        transform: scale(1);
+        transform: scale(1.2);
         left: 47.4vw;
-        bottom: 20vw;
+        bottom: 22vw;
     }
 }
 

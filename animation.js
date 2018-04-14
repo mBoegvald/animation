@@ -28,18 +28,39 @@ Animationer:
 
 */
 
+/*$("#button_startHistorie").on("click", startHistorie);*/
+
+//$("#keeper_container").on("click", dommerFloejt);
+
+/*$("#button_shotcycleStart").on("click", shotcycleStart);*/
+
+/*$("#button_redning").on("click", redning);*/
+
+/*$("#button_buRaab").on("click", buRaab);*/
+
+/*$("#button_shooterTrist").on("click", shooterTrist);*/
+
+
+
+
 $(window).on("load", sidenVises);
 
+
 function sidenVises() {
+
+
     $("#keeper_container").addClass("keeper_position");
     $("#football_container").addClass("football_position");
+
+    $("#scene").on("click", startHistorie);
 }
 
-$("#button_startHistorie").on("click", startHistorie);
+
 
 function startHistorie() {
     console.log("startHistorie");
 
+    $("#scene").off("click", startHistorie);
     //start lyd: Tilskuerstøj
 
     $("#cloud").addClass("cloud_animation");
@@ -50,15 +71,34 @@ function startHistorie() {
 
     $("#shooter_container").addClass("shooter_walk_right");
 
+    $("#shooter_container").on("animationend", activateKeeperButton);
+
 
 }
 
-$("#button_dommerFloejt").on("click", dommerFloejt);
-
-function dommerFloejt() {
-    console.log("dommerFloejt");
+function activateKeeperButton() {
+    $("#shooter_container").off("animationend");
+    $("#keeper_container").on("click", dommerFloejt);
 
     $("#shooter_sprite").removeClass("shooter_walkcycle");
+}
+
+
+function dommerFloejt() {
+
+
+    console.log("dommerFloejt");
+
+    $("#keeper_container").off("click", dommerFloejt);
+
+
+
+
+    setTimeout(shotcycleStart, 1000)
+
+
+    //  $("#shooter_container").on("animationend", shotcycleStart);
+
 
 
     //start lyd: dommerfløjt
@@ -66,7 +106,7 @@ function dommerFloejt() {
 }
 
 
-$("#button_shotcycleStart").on("click", shotcycleStart);
+
 
 function shotcycleStart() {
     console.log("shotcycleStart");
@@ -78,34 +118,42 @@ function shotcycleStart() {
     $("#shooter_container").addClass("shooter_run_right");
 
 
+
+    $("#shooter_container").on("animationend", redning);
+
 }
 
-$("#button_redning").on("click", redning);
+
 
 
 function redning() {
     console.log("redning");
-
+    $("#shooter_container").off("animationend");
     //1 sekund efter.
     $("#football_container").addClass("football_middle");
     $("#keeper_sprite").addClass("keeper_catchcycle")
 
+    $("#keeper_container").on("animationend", buRaab);
 }
 
 
-$("#button_buRaab").on("click", buRaab);
+
 
 function buRaab() {
     console.log("buRaab");
+
+    $("#keeper_container").off("animationend");
 
     //stop lyd: tilskuerstøj
 
     //start lyd: Bu-råb fra tilskuere
 
+    setTimeout(shooterTrist, 1000);
+
 }
 
 
-$("#button_shooterTrist").on("click", shooterTrist);
+
 
 function shooterTrist() {
     console.log("shooterTrist");
