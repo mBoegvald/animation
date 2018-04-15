@@ -47,20 +47,34 @@ $(window).on("load", sidenVises);
 
 
 function sidenVises() {
-
+    $("#start_button").hover(function () {
+        $("#start_button").css({
+            "transform": "scale(1.2)",
+            "transition": "all 0.1s ease-out"
+        });
+    }, function () {
+        $("#start_button").css("transform", "scale(1)");
+    });
 
     $("#keeper_container").addClass("keeper_position");
-    $("#football_container").addClass("football_position");
+    $("#football_container").addClass("display_none");
 
-    $("#scene").on("click", startHistorie);
+    $("#start_button").on("click", startHistorie);
 }
 
 
 
 function startHistorie() {
     console.log("startHistorie");
+    $("#football_container").removeClass("display_none");
+    $("#football_container").addClass("football_position");
 
-    $("#scene").off("click", startHistorie);
+
+    $("#start_button").addClass("display_none");
+    $("#title").addClass("display_none");
+
+    $("#start_button").off("click", startHistorie);
+
     //start lyd: Tilskuerstøj
 
     $("#cloud").addClass("cloud_animation");
@@ -71,12 +85,12 @@ function startHistorie() {
 
     $("#shooter_container").addClass("shooter_walk_right");
 
-    $("#shooter_container").on("animationend", targetButton);
+    $("#shooter_container").on("animationend", targetKnap);
 
 
 }
 
-function targetButton() {
+function targetKnap() {
 
     $("#shooter_container").off("animationend");
 
@@ -93,19 +107,32 @@ function targetButton() {
 
     $("#target_container3").addClass("target_right");
 
+
+
+
+
+    $("#target_container1").hover(function () {
+        $("#target_container1").css({
+            "transform": "scale(1.2)",
+            "transition": "all 0.5s ease-out"
+        });
+    }, function () {
+        $("#target_container1").css("transform", "scale(1)");
+    });
+
+
     $("#target_container2, #target_container3").hover(function () {
-        $("#target_container2, #target_container3").css("transform", "scale(1.2)");
+        $("#target_container2, #target_container3").css({
+            "transform": "scale(1.2)",
+            "transition": "all 0.5s ease-out"
+        });
     }, function () {
         $("#target_container2, #target_container3").css("transform", "scale(1)");
     });
 
 
-    $("#target_container1").hover(function () {
-        $("#target_container1").css("transform", "scale(1.2)");
-    }, function () {
-        $("#target_container1").css("transform", "scale(1)");
-    });
-};
+
+}
 
 
 
@@ -161,7 +188,8 @@ function shotcycleStart() {
 function redning() {
     console.log("redning");
     $("#shooter_container").off("animationend");
-    //1 sekund efter.
+
+    $("#football_container").removeClass("football_position");
     $("#football_container").addClass("football_middle");
     $("#keeper_sprite").addClass("keeper_catchcycle")
 
@@ -176,7 +204,6 @@ function buRaab() {
 
     $("#keeper_container").off("animationend");
 
-    //stop lyd: tilskuerstøj
 
     //start lyd: Bu-råb fra tilskuere
 

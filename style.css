@@ -12,6 +12,28 @@ body {
     overflow: hidden;
 }
 
+#title {
+    width: 100vw;
+    height: 100vw;
+    position: absolute;
+    background-image: url(title.png);
+    background-size: 100%;
+}
+
+.display_none {
+    display: none;
+}
+
+#start_button {
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    background-image: url(start_button-01.svg);
+    background-size: 100%;
+    left: 40vw;
+    bottom: 5vw;
+}
+
 #background {
     width: 100vw;
     height: 56.25vw;
@@ -274,7 +296,8 @@ body {
 
 #keeper_container {
     position: absolute;
-
+    left: 39.6vw;
+    bottom: 17vw;
 
 }
 
@@ -394,6 +417,12 @@ body {
     height: 7vw;
     bottom: 28vw;
     left: 63.8vw;
+
+}
+
+.targethover:hover {
+    transform: scale(1.2);
+    transition-timing-function: ease-in;
 }
 
 

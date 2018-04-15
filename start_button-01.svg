@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1 {
+        stroke-width: 10px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-size: 138.19px;
+        fill: #183149;
+        stroke-width: 3px;
+        font-family: PTSans-Bold, PT Sans;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        letter-spacing: -0.08em;
+      }
+
+      .cls-5 {
+        letter-spacing: -0.05em;
+      }
+
+      .cls-6 {
+        letter-spacing: -0.04em;
+      }
+    </style>
+  </defs>
+  <title>start_button</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g>
+      <circle class="cls-1" cx="257.13" cy="250" r="128.65"/>
+      <path class="cls-2" d="M189.84,140.34l19,12.72s28.62-9.16,64.69-2.86L297,131.31S253.31,107.58,189.84,140.34Z"/>
+      <path class="cls-2" d="M215.11,159.93l-22.33,45.24,36.64,46.37s43.51-6.3,51.53-4l27.48-55-29.2-35.5S245.45,150.2,215.11,159.93Z"/>
+      <path class="cls-2" d="M221.4,255.55s-8,31.49-11.45,49.24L171,315.67,140.1,276.73s4-42.94,12.6-56.11l32.63-10.3Z"/>
+      <path class="cls-2" d="M172.16,323.68l42.37-10.88S246,334,260.34,338.57l2.86,28.63s-16.07,5.15-17.18,8c0,0-38.36-1.14-73.86-31.2Z"/>
+      <path class="cls-2" d="M268.92,339.14l3.44,26.91L297,368.91s28-4.39,58.4-40.27V302.69H313.2S282.47,335.71,268.92,339.14Z"/>
+      <path class="cls-2" d="M311.1,294.1h47.33s19.09-36.67,19.09-44.1-23.29-49.61-31.11-53.61H315.68l-25.76,52.67S301.75,261.66,311.1,294.1Z"/>
+      <path class="cls-2" d="M133.52,272.44s-5.44-28.91,0-47.24,6.58-23.18,10.59-30L146.69,214s-6.43,14.31-7.8,24.62C138.89,238.66,133,257.32,133.52,272.44Z"/>
+      <path class="cls-2" d="M355.38,171.67s29,35.12,27.48,73.57c0,0-14-40.36-27.48-50.67Z"/>
+    </g>
+  </g>
+  <g id="Layer_1" data-name="Layer 1">
+    <text class="cls-3" transform="translate(73 287.1)">S<tspan class="cls-4" x="73.24" y="0">T</tspan><tspan x="140.96" y="0">A</tspan><tspan class="cls-5" x="224.56" y="0">R</tspan><tspan class="cls-6" x="300.98" y="0">T</tspan></text>
+  </g>
+</svg>
