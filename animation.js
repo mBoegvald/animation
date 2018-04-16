@@ -75,7 +75,7 @@ function startHistorie() {
 
     $("#start_button").off("click", startHistorie);
 
-    //start lyd: Tilskuerstøj
+    $("#tilskuer_stoej")[0].play();
 
     $("#cloud").addClass("cloud_animation");
 
@@ -142,6 +142,8 @@ function dommerFloejt() {
 
     console.log("dommerFloejt");
 
+    $("#dommerfloejt")[0].play();
+
     $("#target_container1").removeClass("target_middle");
 
     $("#target_container2").removeClass("target_left");
@@ -150,17 +152,13 @@ function dommerFloejt() {
 
     $("#target_container1").off("click", dommerFloejt);
 
-
-
-
-    setTimeout(shotcycleStart, 1000)
+    $("#dommerfloejt").on("ended", shotcycleStart);
 
 
     //  $("#shooter_container").on("animationend", shotcycleStart);
 
 
 
-    //start lyd: dommerfløjt
 
 }
 
@@ -202,10 +200,12 @@ function redning() {
 function buRaab() {
     console.log("buRaab");
 
+
+    $("#bu_raab")[0].play();
     $("#keeper_container").off("animationend");
 
 
-    //start lyd: Bu-råb fra tilskuere
+
 
     setTimeout(shooterTrist, 1000);
 
