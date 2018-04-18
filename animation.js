@@ -97,7 +97,9 @@ function targetKnap() {
 
 
 
-    $("#target_container1").on("click", dommerFloejt);
+    $("#target_container1").on("click", dommerFloejtMid);
+    $("#target_container2").on("click", dommerFloejtSide);
+    $("#target_container3").on("click", dommerFloejtSide);
 
     $("#shooter_sprite").removeClass("shooter_walkcycle");
 
@@ -137,10 +139,10 @@ function targetKnap() {
 
 
 
-function dommerFloejt() {
+function dommerFloejtMid() {
 
 
-    console.log("dommerFloejt");
+    console.log("dommerFloejtMid");
 
     $("#dommerfloejt")[0].play();
 
@@ -150,9 +152,34 @@ function dommerFloejt() {
 
     $("#target_container3").removeClass("target_right");
 
-    $("#target_container1").off("click", dommerFloejt);
+    $("#target_container1").off("click", dommerFloejtMid);
 
-    $("#dommerfloejt").on("ended", shotcycleStart);
+    $("#dommerfloejt").on("ended", shotcycleStartMid);
+
+
+    //  $("#shooter_container").on("animationend", shotcycleStart);
+
+
+
+
+}
+
+function dommerFloejtSide() {
+
+
+    console.log("dommerFloejtSide");
+
+    $("#dommerfloejt")[0].play();
+
+    $("#target_container1").removeClass("target_middle");
+
+    $("#target_container2").removeClass("target_left");
+
+    $("#target_container3").removeClass("target_right");
+
+    $("#target_container1").off("click", dommerFloejtMid);
+
+    $("#dommerfloejt").on("ended", shotcycleStartSide);
 
 
     //  $("#shooter_container").on("animationend", shotcycleStart);
@@ -165,8 +192,8 @@ function dommerFloejt() {
 
 
 
-function shotcycleStart() {
-    console.log("shotcycleStart");
+function shotcycleStartMid() {
+    console.log("shotcycleStartMid");
 
     $("#shooter_container").removeClass("shooter_walk_right");
 
@@ -220,4 +247,93 @@ function shooterTrist() {
 
 
     $("#shooter_sprite").addClass("shooter_sad");
+}
+
+
+// Venstre ben slut.
+
+// Højre ben.
+
+function shotcycleStartSide() {
+    console.log("shotcycleStartSide");
+
+    $("#shooter_container").removeClass("shooter_walk_right");
+
+    $("#shooter_sprite").addClass("shooter_shotcycle");
+
+    $("#shooter_container").addClass("shooter_run_right");
+
+
+
+    $("#shooter_container").on("animationend", randomValg);
+
+}
+
+function randomValg() {
+    console.log("randomValg");
+
+
+    if (Math.random >= 0.5) {
+        aimGreen();
+    } else {
+        goalRight();
+    }
+
+}
+
+function goalRight() {
+    console.log("goalRight");
+
+    $("#shooter_container").off("animationend");
+    $("#football_container").removeClass("football_position");
+    $("#football_container").addClass("football_right");
+
+    setTimeout(jubel, 3000);
+
+}
+
+function jubel() {
+    /*Spil lyd: celebration*/
+
+    $("#tilskuer_jubel")[0].play();
+    setTimeout(shooterHappy, 1000);
+
+}
+
+function shooterHappy() {
+    console.log("shooterHappy");
+    $("#shooter_sprite").removeClass("shooter_shotcycle");
+    $("#shooter_container").removeClass("shooter_run_right");
+    $("#shooter_sprite").addClass("shooter_happy");
+    $("#shooter_container").addClass("shooter_jump");
+}
+
+function aimGreen() {
+    console.log("aimGreen");
+    // Start sigtekorn
+    removeAim();
+
+}
+
+function removeAim() {
+    console.log("removeAim");
+    // stop animation sigtekorn
+
+    hitOrMiss();
+}
+
+function hitOrMiss() {
+    console.log("hitOrMiss");
+    // if or else
+}
+
+function goalLeft() {
+    console.log("goalLeft");
+
+
+    $("#shooter_container").off("animationend");
+    $("#football_container").removeClass("football_position");
+    $("#football_container").addClass("football_left");
+
+    setTimeout(jubel, 3000);
 }
