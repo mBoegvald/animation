@@ -273,13 +273,15 @@ function randomValg() {
     console.log("randomValg");
 
 
-    if (Math.random >= 0.5) {
+    if (Math.random() >= 0.5) {
         aimGreen();
     } else {
         goalRight();
     }
 
 }
+
+
 
 function goalRight() {
     console.log("goalRight");
@@ -325,6 +327,7 @@ function removeAim() {
 function hitOrMiss() {
     console.log("hitOrMiss");
     // if or else
+    goalLeft();
 }
 
 function goalLeft() {
