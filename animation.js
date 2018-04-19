@@ -46,7 +46,14 @@ Animationer:
 $(window).on("load", sidenVises);
 
 
+
 function sidenVises() {
+    console.log("sidenVises");
+
+
+    $("#sigtekorn").hide();
+
+
     $("#start_button").hover(function () {
         $("#start_button").css({
             "transform": "scale(1.2)",
@@ -60,6 +67,8 @@ function sidenVises() {
     $("#football_container").addClass("display_none");
 
     $("#start_button").on("click", startHistorie);
+
+
 }
 
 
@@ -76,6 +85,7 @@ function startHistorie() {
     $("#start_button").off("click", startHistorie);
 
     $("#tilskuer_stoej")[0].play();
+    $("#tilskuer_stoej")[0].volume = 0.2;
 
     $("#cloud").addClass("cloud_animation");
 
@@ -91,6 +101,7 @@ function startHistorie() {
 }
 
 function targetKnap() {
+    console.log("targetKnap");
 
     $("#shooter_container").off("animationend");
 
@@ -145,6 +156,8 @@ function dommerFloejtMid() {
     console.log("dommerFloejtMid");
 
     $("#dommerfloejt")[0].play();
+    $("#dommerfloejt")[0].volume = 0.1;
+
 
     $("#target_container1").removeClass("target_middle");
 
@@ -170,6 +183,7 @@ function dommerFloejtSide() {
     console.log("dommerFloejtSide");
 
     $("#dommerfloejt")[0].play();
+    $("#dommerfloejt")[0].volume = 0.1;
 
     $("#target_container1").removeClass("target_middle");
 
@@ -229,6 +243,7 @@ function buRaab() {
 
 
     $("#bu_raab")[0].play();
+    $("#bu_raab")[0].volume = 0.2;
     $("#keeper_container").off("animationend");
 
 
@@ -270,7 +285,10 @@ function shotcycleStartSide() {
 }
 
 function randomValg() {
+
     console.log("randomValg");
+    $("#shooter_container").off("animationend", randomValg);
+
 
 
     if (Math.random() >= 0.5) {
@@ -290,14 +308,16 @@ function goalRight() {
     $("#football_container").removeClass("football_position");
     $("#football_container").addClass("football_right");
 
-    setTimeout(jubel, 3000);
+    $("#football_container").on("animationend", jubel);
 
 }
 
 function jubel() {
     /*Spil lyd: celebration*/
+    $("#football_container").off("animationend", jubel);
 
     $("#tilskuer_jubel")[0].play();
+    $("#tilskuer_jubel")[0].volume = 0.2;
     setTimeout(shooterHappy, 1000);
 
 }
@@ -312,13 +332,25 @@ function shooterHappy() {
 
 function aimGreen() {
     console.log("aimGreen");
-    // Start sigtekorn
-    removeAim();
+
+    $("#sigtekorn").show();
+
+
+
+    $("#dot").addClass("dot_move");
+
+
+    $("#football_container").on("click", removeAim);
+
+
 
 }
 
 function removeAim() {
     console.log("removeAim");
+    $("#dot").removeClass("dot_move");
+    $("#sigtekorn").hide();
+
     // stop animation sigtekorn
 
     hitOrMiss();
@@ -326,6 +358,13 @@ function removeAim() {
 
 function hitOrMiss() {
     console.log("hitOrMiss");
+
+    /*if {
+
+        goalLeft();
+    } else {
+        redning();
+    }*/
     // if or else
     goalLeft();
 }
@@ -338,5 +377,5 @@ function goalLeft() {
     $("#football_container").removeClass("football_position");
     $("#football_container").addClass("football_left");
 
-    setTimeout(jubel, 3000);
+    $("#football_container").on("animationend", jubel);
 }

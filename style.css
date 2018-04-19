@@ -7,14 +7,14 @@ body {
 
 #scene {
     width: 100vw;
-    height: 56.20vw;
+    height: 56.25vw;
     position: relative;
     overflow: hidden;
 }
 
 #title {
     width: 100vw;
-    height: 100vw;
+    height: 56.25vw;
     position: absolute;
     background-image: url(title.png);
     background-size: 100%;
@@ -62,11 +62,11 @@ body {
 
 #foreground {
     width: 100vw;
-    height: 56.25vw;
-    background-image: url(forgrund-01.svg);
+    height: 8vw;
+    background-image: url(forgrund-02-01.svg);
     background-size: 100%;
     position: absolute;
-
+    bottom: 0vw;
 }
 
 .cloud_animation {
@@ -98,7 +98,7 @@ body {
 }
 
 #shooter_sprite {
-    background-image: url(shooter_sprite1.svg);
+    background-image: url(shooter_sprite1_uden_baggrund-01.svg);
     background-size: 1000%;
     width: 15vw;
     height: 21.2vw;
@@ -302,7 +302,7 @@ body {
 }
 
 #keeper_sprite {
-    background-image: url(keeper_sprite.svg);
+    background-image: url(keeper_uden_baggrund_keeper_sprite.svg);
     background-size: 600%;
     width: 20vw;
     height: 28.57vw;
@@ -486,3 +486,55 @@ body {
 
 
 /*      TARGET CSS SLUT    */
+
+/*      SIGTEKORN START    */
+
+#sigtekorn {
+    width: 20vw;
+    height: 1.8vw;
+    position: absolute;
+    background-image: url(aim-01.svg);
+    background-size: 100%;
+    left: 40vw;
+    bottom: 10vw;
+    transform: scale(2)
+}
+
+.sigtekorn_on {}
+
+.sigtekorn_off {
+    display: none;
+
+}
+
+#dot {
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    background-image: url(dot-01.svg);
+    background-size: 100%;
+    left: -8vw;
+    bottom: -9.3vw;
+    transform: scale(0.15)
+}
+
+.dot_move {
+    animation-name: dot_move_kf;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes dot_move_kf {
+    0% {
+        left: 8vw;
+    }
+    50% {
+        left: -8vw;
+    }
+    100% {
+        left: 8vw;
+    }
+}
