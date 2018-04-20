@@ -45,7 +45,7 @@ Animationer:
 
 $(window).on("load", sidenVises);
 
-
+var myTimer;
 
 function sidenVises() {
     console.log("sidenVises");
@@ -227,6 +227,9 @@ function shotcycleStartMid() {
 function redning() {
     console.log("redning");
     $("#shooter_container").off("animationend");
+    $("#dot").removeClass("dot_move");
+    $("#sigtekorn").hide();
+    $("#football_container").removeClass("puls");
 
     $("#football_container").removeClass("football_position");
     $("#football_container").addClass("football_middle");
@@ -334,7 +337,7 @@ function aimGreen() {
     console.log("aimGreen");
 
     $("#sigtekorn").show();
-
+    $("#football_container").addClass("puls");
 
 
     $("#dot").addClass("dot_move");
@@ -342,35 +345,40 @@ function aimGreen() {
 
     $("#football_container").on("click", removeAim);
 
+    myTimer = setTimeout(redning, 4500);
 
 
 }
 
 function removeAim() {
     console.log("removeAim");
-    $("#dot").removeClass("dot_move");
-    $("#sigtekorn").hide();
+    console.log("position left " + $("#dot").position().left);
 
-    // stop animation sigtekorn
+    var dotPos = $("#dot").position().left;
+    $("#football_container").removeClass("puls");
 
-    hitOrMiss();
-}
 
-function hitOrMiss() {
-    console.log("hitOrMiss");
 
-    /*if {
-
+    if (80 <= dotPos && 160 >= dotPos) {
+        console.log("I mellem");
         goalLeft();
     } else {
         redning();
-    }*/
-    // if or else
-    goalLeft();
+    }
+
+
+
+
+
+
 }
 
 function goalLeft() {
     console.log("goalLeft");
+    $("#dot").removeClass("dot_move");
+    $("#sigtekorn").hide();
+
+    clearTimeout(myTimer);
 
 
     $("#shooter_container").off("animationend");
